@@ -84,4 +84,14 @@
             </search>
         </field>
     </record>
+
+    <record id="open_authored_books" model="ir.actions.act_window">
+
+        <field name="name">Authored Books</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">library.book</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('author_ids','=', active_id)]</field>
+
+    </record>
 </odoo>

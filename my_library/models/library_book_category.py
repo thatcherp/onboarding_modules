@@ -3,9 +3,6 @@ from odoo.exceptions import ValidationError
 
 class LibraryBookCategory(models.Model):
     _name = 'library.book.category'
-    max_borrow_days = fields.Integer('Maximum borrow days',
-                    help="For how many days book can be borrowed",
-                    default=10)
     description = fields.Text('Descriptions')
     name = fields.Char('Category')
     parent_id = fields.Many2one(

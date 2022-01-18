@@ -1,3 +1,4 @@
+from typing_extensions import Self
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError, UserError
 from odoo.tools.translate import _
@@ -79,6 +80,7 @@ class LibraryBook(models.Model):
         store=False,
         compute_sudo=True
     )
+        
 
     def return_all_books(self):
         self.ensure_one()
@@ -290,7 +292,7 @@ class ResPartner(models.Model):
     published_books_id = fields.One2many(
         'library.book', 'publisher_id',
         string='Published Books'
-    )
+    ) 
 
     @api.depends('authored_book_ids')
     def _compute_count_books(self):
